@@ -1,4 +1,4 @@
 package org.wandukong.soolleongx2
 
-class RecordWeekResponseData {
-}
+//data class RecordWeekResponseData (
+//)
