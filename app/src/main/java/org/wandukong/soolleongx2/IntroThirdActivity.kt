@@ -60,6 +60,7 @@ class IntroThirdActivity : AppCompatActivity() {
         })
 
         button_success.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
 

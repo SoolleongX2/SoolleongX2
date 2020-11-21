@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_appicon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SoolleongX2">
-        <activity android:name=".NOTHING"></activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".IntroThirdActivity" />
         <activity android:name=".IntroSecondActivity" />
         <activity android:name=".IntroFirstActivity">
