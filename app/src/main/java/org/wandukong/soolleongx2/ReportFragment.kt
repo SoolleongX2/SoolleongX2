@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_report.*
-import org.wandukong.soolleongx2.Data.ReceiveRequestAlcoholData
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
