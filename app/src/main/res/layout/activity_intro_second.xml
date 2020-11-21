@@ -4,28 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".IntroSecondActivity">
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="40dp"
-        android:gravity="center"
-        android:text="이번 주에 무슨 술과 함께하실래요?"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Button"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/btn_secondintro"
+        android:paddingTop="13dp"
+        android:paddingBottom="16dp"
+        android:text="다음"
+        android:textSize="25sp"
+        android:textColor="#eff4f9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -34,21 +28,58 @@
         android:id="@+id/button_soju"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_beer"
+        android:layout_marginTop="37dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/btn_soju_unselected"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
     <ImageButton
         android:id="@+id/button_beer"
-        android:text="beer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/btn_beer_unselected"
+        android:text="beer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_soju"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_soju" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/notosans_regular"
+        android:text="이번 주는"
+        android:textColor="#0d2480"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_bold"
+        android:text="어떤 주류"
+        android:textSize="26sp"
+        android:textColor="#0d2480"
+        app:layout_constraintStart_toStartOf="@+id/tv1"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:textColor="#0d2480"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_regular"
+        android:text="와 함께할까요?"
+        android:textSize="26sp"
+        app:layout_constraintStart_toEndOf="@+id/tv2"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

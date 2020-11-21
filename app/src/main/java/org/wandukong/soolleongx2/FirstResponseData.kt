@@ -2,7 +2,7 @@ package org.wandukong.soolleongx2
 
 import android.media.session.MediaSession
 
-class FirstResponseData (
-    val token : MediaSession.Token,
+data class FirstResponseData (
+    val token : String,
     val isGoal : Boolean
 )
