@@ -46,8 +46,8 @@ class IntroFirstActivity : AppCompatActivity() {
                     response.takeIf { it.isSuccessful }
                         ?.body()
                         ?.let {
-                                data->
-                            sharedEdit.putString("token",data.token)
+                                body ->
+                            sharedEdit.putString("token",body.data.token)
                             sharedEdit.apply()
                         }
                 }
