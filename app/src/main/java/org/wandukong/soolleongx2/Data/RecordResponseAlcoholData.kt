@@ -1,6 +1,7 @@
 package org.wandukong.soolleongx2.Data
 
 data class RecordResponseAlcoholData (
-    val status : Int,
-    val message : String
+        val message: String,
+        val status: Int,
+        val success: Boolean
 )
