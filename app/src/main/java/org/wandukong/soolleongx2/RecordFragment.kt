@@ -110,7 +110,7 @@ class RecordFragment : Fragment() {
 
     private fun sendAlcoholData(){
         val call : Call<RecordResponseAlcoholData> = RecordServiceImpl.service.recordAlcohol(
-            "asdasd",
+
             RecordRequestAlcoholData(bottle = bottle, glass = glass)
         )
         call.enqueue(object : Callback<RecordResponseAlcoholData> {
@@ -135,7 +135,7 @@ class RecordFragment : Fragment() {
         val notosansBold = ResourcesCompat.getFont(view.context, R.font.notosans_bold)
         val notosansRegular = ResourcesCompat.getFont(view.context, R.font.notosans_medium)
 
-        button_start_end.setOnClickListener {       // 기록 시작/종료 버튼 
+        button_start_end.setOnClickListener {       // 기록 시작/종료 버튼
 
             if(IsStartRecord == 0){
                 textView_remain.setTextColor(Color.parseColor("#FF0096"))
@@ -146,7 +146,8 @@ class RecordFragment : Fragment() {
                 textView_count.typeface = notosansBold
                 textView_remain.text = bottle.toString() + "병" + glass.toString() + "잔"
                 textView.text = "이 한계에요!"
-
+                button_bottle.setTextColor(Color.parseColor("#0d2480"))
+                button_glass.setTextColor(Color.parseColor("#0d2480"))
                 button_bottle.setCompoundDrawables(null,null,null,null)
                 button_bottle.setBackgroundResource(R.drawable.btn_bottle_selected)
                 button_glass.setBackgroundResource(R.drawable.btn_glass_selected)
@@ -156,10 +157,12 @@ class RecordFragment : Fragment() {
             }else{
                 //sendAlcoholData()
                 button_start_end.setTextColor(Color.parseColor("#ffffff"))
-                button_start_end.setBackgroundResource(R.drawable.start_drawable)
+                button_start_end.setBackgroundResource(R.drawable.start_drawble)
                 textView_remain.setTextColor(Color.parseColor("#0D2480"))
                 textView_remain.text = "기록을 시작"
                 textView_count.typeface = notosansRegular
+                button_bottle.setTextColor(Color.parseColor("#d3d9de"))
+                button_glass.setTextColor(Color.parseColor("#d3d9de"))
                 textView.text = "해 볼까요?"
                 button_bottle.isEnabled = false
                 button_glass.isEnabled = false
@@ -191,7 +194,7 @@ class RecordFragment : Fragment() {
                 7 -> imageView_sl.setImageResource(R.drawable.img_sull_08)
             }
         }
-        
+
         button_glass.setOnClickListener {  // 잔 버튼
             cntGlass++
             if(cntGlass == 7) {
