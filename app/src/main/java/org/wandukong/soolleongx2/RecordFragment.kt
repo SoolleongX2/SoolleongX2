@@ -32,14 +32,13 @@ class RecordFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     val formatted = current.format(formatter)
 
-
     private var cntGlass = 0
     private var cntBottle = 0
     private var goal = 7*7
     private var cur = 0
     private var bottle = 7
-    private var glass = 0
     private var token = ""
+    private var glass = 0
     private var IsStartRecord = 0
 
     override fun onCreateView(
@@ -59,29 +58,29 @@ class RecordFragment : Fragment() {
         buttonClick(view)
     }
 
-    private fun receiveGoalAlcoholData(){
-        val call : Call<GoalResponseData> = ReportServiceImpl.service.getGoal(
-            "asdasdad"
-        )
-        call.enqueue(object : Callback<GoalResponseData> {
-            override fun onFailure(call: Call<GoalResponseData>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-            override fun onResponse(
-                call: Call<GoalResponseData>,
-                response: Response<GoalResponseData>
-            ) {
-                response.takeIf { it.isSuccessful }
-                    ?.body()
-                    ?.let { data ->
-                        goal = data.bottle * 7
-
-
-                    }
-                    ?: showError(response.errorBody())
-            }
-        })
-    }
+//    private fun receiveGoalAlcoholData(){
+//        val call : Call<GoalResponseData> = ReportServiceImpl.service.getGoal(
+//            "asdasdad"
+//        )
+//        call.enqueue(object : Callback<GoalResponseData> {
+//            override fun onFailure(call: Call<GoalResponseData>, t: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//            override fun onResponse(
+//                call: Call<GoalResponseData>,
+//                response: Response<GoalResponseData>
+//            ) {
+//                response.takeIf { it.isSuccessful }
+//                    ?.body()
+//                    ?.let { data ->
+//                        goal = data.bottle * 7
+//
+//
+//                    }
+//                    ?: showError(response.errorBody())
+//            }
+//        })
+//    }
 
     private fun receiveAlcoholData(){
         val call : Call<ReceiveResponseAlcoholData> = ReceiveServiceImpl.service.receiveAlcohol(
@@ -97,8 +96,8 @@ class RecordFragment : Fragment() {
                 response.takeIf { it.isSuccessful }
                     ?.body()
                     ?.let { data ->
-                        bottle = data.bottle
-                        glass = data.glass
+                        bottle = data.data.bottle
+                        glass = data.data.glass
 
                         cur = (goal - ( bottle * 7 + glass)) / 7
 
@@ -110,7 +109,7 @@ class RecordFragment : Fragment() {
 
     private fun sendAlcoholData(){
         val call : Call<RecordResponseAlcoholData> = RecordServiceImpl.service.recordAlcohol(
-
+            token = token,
             RecordRequestAlcoholData(bottle = bottle, glass = glass)
         )
         call.enqueue(object : Callback<RecordResponseAlcoholData> {
