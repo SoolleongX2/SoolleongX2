@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_record.*
 import okhttp3.ResponseBody
 import org.json.JSONObject
@@ -171,7 +172,7 @@ class RecordFragment : Fragment() {
         }
 
         button_bottle.setOnClickListener {   // 병 버튼
-            cntGlass++
+            cntBottle++
             button_bottle.text = cntBottle.toString() + "병"
             if(bottle == 0){
                 textView_remain.text = "목표"

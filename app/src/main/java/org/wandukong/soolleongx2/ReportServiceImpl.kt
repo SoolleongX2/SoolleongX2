@@ -1,5 +1,6 @@
 package org.wandukong.soolleongx2
 
+import ReportService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
