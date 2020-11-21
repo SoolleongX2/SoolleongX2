@@ -118,7 +118,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_beer_unselected"
+                android:src="@drawable/ic_beer_unselected2"
                 android:layout_marginEnd="48dp"
                 android:layout_marginTop="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -162,7 +162,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/btn_sull_unselected"
+                android:src="@drawable/btn_sull_unselected1"
                 android:layout_marginEnd="51dp"
                 android:layout_marginTop="38dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -198,7 +198,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_glass"
+                android:src="@drawable/ic_glass1"
                 android:layout_marginEnd="47dp"
                 android:layout_marginTop="19dp"
                 app:layout_constraintEnd_toEndOf="parent"
