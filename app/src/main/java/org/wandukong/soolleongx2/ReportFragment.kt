@@ -58,6 +58,7 @@ class ReportFragment : Fragment() {
 //            }
 //        })
 
+<<<<<<< Updated upstream
 //
 //        txt_goal_bottle.text = "병"+"잔"   // 이번 주 목표
 //        txt_today_bottle.text = "이번주는 "+"병"+"잔 마심." // 이번 주 오늘까지 마신 기록
@@ -77,6 +78,27 @@ class ReportFragment : Fragment() {
 //        txt_day5_date.text = "월"+"일"
 //        txt_day6_date.text = "월"+"일"
 //        txt_day7_date.text = "월"+"일"
+=======
+
+        txt_goal_bottle.text = "병"+"잔"   // 이번 주 목표
+        txt_today_bottle.text = "이번주는 "+"병"+"잔 마심." // 이번 주 오늘까지 마신 기록
+
+        txt_day1_bottle.text = "병"+"잔"
+        txt_day2_bottle.text = "병"+"잔"
+        txt_day3_bottle.text = "병"+"잔"
+        txt_day4_bottle.text = "병"+"잔"
+        txt_day5_bottle.text = "병"+"잔"
+        txt_day6_bottle.text = "병"+"잔"
+        txt_day7_bottle.text = "병"+"잔"
+
+        txt_day1_date.text = "월"+"일"
+        txt_day2_date.text = "월"+"일"
+        txt_day3_date.text = "월"+"일"
+        txt_day4_date.text = "월"+"일"
+        txt_day5_date.text = "월"+"일"
+        txt_day6_date.text = "월"+"일"
+        txt_day7_date.text = "월"+"일"
+>>>>>>> Stashed changes
 
 
     }

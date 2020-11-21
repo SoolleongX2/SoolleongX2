@@ -1,4 +1,5 @@
 package org.wandukong.soolleongx2
 
-class GoalResponseData {
-}
+data class GoalResponseData (
+    val bottle: Int
+)
