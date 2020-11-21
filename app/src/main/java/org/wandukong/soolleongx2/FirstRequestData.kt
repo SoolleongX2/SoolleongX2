@@ -1,5 +1,5 @@
 package org.wandukong.soolleongx2
 
-class FirstRequestData (
+data class FirstRequestData (
     val uuid : String
 )

@@ -6,34 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".IntroFirstActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="목표를 설정해주세요"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/button_yes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Button"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/btn_firstintro"
+        android:fontFamily="@font/notosans_bold"
+        android:paddingTop="13dp"
+        android:paddingBottom="16dp"
+        android:text="시작하기"
+        android:textColor="#0d2480"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="510dp"
+        android:src="@drawable/img_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView_sl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="270dp"
+        android:layout_marginBottom="292dp"
+        android:src="@drawable/ic_sull_goal"
+        app:layout_constraintBottom_toBottomOf="@+id/button_yes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/notosans_regular"
+        android:text="7일간의"
+        android:textColor="#0d2480"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_bold"
+        android:text="주량목표"
+        android:textColor="#0d2480"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv1"
+        app:layout_constraintStart_toEndOf="@+id/tv1" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:textColor="#0d2480"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_regular"
+        android:text="를"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv4"
+        app:layout_constraintStart_toEndOf="@+id/tv2" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:textColor="#0d2480"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosans_regular"
+        android:text="설정해봐요!"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@+id/tv1"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

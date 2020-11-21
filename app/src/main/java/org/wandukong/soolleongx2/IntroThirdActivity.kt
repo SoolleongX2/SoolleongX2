@@ -1,6 +1,8 @@
 package org.wandukong.soolleongx2
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,6 +23,8 @@ class IntroThirdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro_third)
 
+        val sharedPref: SharedPreferences = getSharedPreferences("pref", Context.MODE_PRIVATE)
+
         val items = resources.getStringArray(R.array.spinner_entries)
         val sp_adapter = ArrayAdapter(this,R.layout.item_spinner,items)
         spinner.adapter = sp_adapter
@@ -36,10 +40,11 @@ class IntroThirdActivity : AppCompatActivity() {
         }
 
         var bottle = spinner.selectedItem.toString().toInt()
-        var drink = intent.getIntExtra("drink",0)
+        var alchol_type = intent.getIntExtra("alchol_type",1)
 
         val call : Call<SecondResponseData> = SecondServiceimpl.service.postBottle(
-            SecondRequestData(drink = drink , bottle = bottle)
+            token = sharedPref.getString("token","").toString(),
+            SecondRequestData(alchol_type = alchol_type , bottle = bottle)
         )
         call.enqueue(object : Callback<SecondResponseData>{
             override fun onFailure(call: Call<SecondResponseData>, t: Throwable) {

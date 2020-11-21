@@ -27,31 +27,31 @@ class IntroFirstActivity : AppCompatActivity() {
 
         var uuid = Settings.Secure.getString(baseContext?.contentResolver, Settings.Secure.ANDROID_ID)
 
+        Log.d("uuid",uuid)
 
-
-        val call : Call<FirstResponseData> = FirstServiceimpl.service.postLogin(
-            FirstRequestData(uuid = uuid)
-        )
-        call.enqueue(object : Callback<FirstResponseData>{
-            override fun onFailure(call: Call<FirstResponseData>, t: Throwable) {
-
-            }
-
-            override fun onResponse(
-                call: Call<FirstResponseData>,
-                response: Response<FirstResponseData>
-            ) {
-                response.takeIf { it.isSuccessful }
-                    ?.body()
-                    ?.let {
-                       data->
-                        sharedEdit.putString("token",data.token.toString())
-                        sharedEdit.apply()
-                    }
-            }
-        })
 
         button_yes.setOnClickListener {
+            val call : Call<FirstResponseData> = FirstServiceimpl.service.postLogin(
+                FirstRequestData(uuid = uuid)
+            )
+            call.enqueue(object : Callback<FirstResponseData>{
+                override fun onFailure(call: Call<FirstResponseData>, t: Throwable) {
+                    Log.e("tt",t.message.toString())
+                }
+
+                override fun onResponse(
+                    call: Call<FirstResponseData>,
+                    response: Response<FirstResponseData>
+                ) {
+                    response.takeIf { it.isSuccessful }
+                        ?.body()
+                        ?.let {
+                                body ->
+                            sharedEdit.putString("token",body.data.token)
+                            sharedEdit.apply()
+                        }
+                }
+            })
             val intent = Intent(this,IntroSecondActivity::class.java)
             startActivity(intent)
         }
