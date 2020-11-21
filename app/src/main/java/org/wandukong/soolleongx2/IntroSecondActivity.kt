@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_intro_second.*
 
-private var drink : Int = 0
+private var alchol_type : Int = 1
 class IntroSecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,15 +13,15 @@ class IntroSecondActivity : AppCompatActivity() {
 
 
         button_soju.setOnClickListener {
-            //button_soju.setImageResource(R.drawable.ic_launcher_background)
-            drink = 0
+            button_soju.setImageResource(R.drawable.btn_soju_selected)
+            alchol_type = 1
         }
         button_beer.setOnClickListener {
-            drink = 1
+            alchol_type = 2
         }
         button_next.setOnClickListener {
             val intent = Intent(this, IntroThirdActivity::class.java)
-            intent.putExtra("drink",drink)
+            intent.putExtra("alchol_type",alchol_type)
             startActivity(intent)
         }
     }
