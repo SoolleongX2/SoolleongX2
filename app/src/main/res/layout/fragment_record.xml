@@ -5,47 +5,67 @@
     android:id="@+id/button_"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecordFragment">
+    tools:context=".RecordFragment"
+    android:background="#ffffff">
 
     <Button
         android:id="@+id/button_glass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:text="소주잔"
-        app:layout_constraintEnd_toStartOf="@+id/button_start_end"
-        app:layout_constraintTop_toTopOf="@+id/button_start_end"
-        android:enabled="false"/>
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bottle_glass_drawable"
+        android:drawableTop="@drawable/btn_glass_unselected"
+        android:enabled="false"
+        android:text="0병"
+        android:fontFamily="@font/notosans_medium"
+        android:textColor="#d3d9de"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_bottle" />
 
     <Button
         android:id="@+id/button_start_end"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/start_drawble"
+        android:fontFamily="@font/notosans_bold"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:text="기록 시작"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_bottle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:text="소주병"
-        app:layout_constraintEnd_toStartOf="@+id/button_glass"
-        app:layout_constraintTop_toTopOf="@+id/button_glass"
-        android:enabled="false"/>
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bottle_glass_drawable"
+        android:drawableTop="@drawable/btn_bottle_unselected"
+        android:enabled="false"
+        android:text="0병"
+        android:fontFamily="@font/notosans_medium"
+        android:textColor="#d3d9de"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_sl" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/ic_launcher_background"
+        android:id="@+id/imageView_sl"
+        android:layout_width="218dp"
+        android:layout_height="232dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/img_sull_01"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_talk" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView_date"
@@ -54,25 +74,21 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:text="TextView"
+        android:fontFamily="@font/notosans_medium"
+        android:textColor="#0D2480"
+        android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView_talk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_remain" />
 
     <TextView
         android:id="@+id/textView_remain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="TextView"
+        android:text="기록을 시작"
+        android:fontFamily="@font/notosans_bold"
+        android:textColor="#0D2480"
+        android:textSize="26sp"
         app:layout_constraintStart_toStartOf="@+id/textView_date"
         app:layout_constraintTop_toBottomOf="@+id/textView_date" />
 
@@ -80,8 +96,22 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이 한계에요..T-T"
+        android:text="해 볼까요?"
+        android:fontFamily="@font/notosans_medium"
+        android:textColor="#0D2480"
+        android:textSize="26sp"
         app:layout_constraintStart_toEndOf="@+id/textView_remain"
         app:layout_constraintTop_toTopOf="@+id/textView_remain" />
+
+    <TextView
+        android:id="@+id/textView_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="의"
+        android:fontFamily="@font/notosans_medium"
+        android:textColor="#0D2480"
+        android:textSize="26sp"
+        app:layout_constraintStart_toEndOf="@+id/textView_date"
+        app:layout_constraintTop_toTopOf="@+id/textView_date" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
