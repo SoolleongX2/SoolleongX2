@@ -4,16 +4,15 @@ import org.wandukong.soolleongx2.Data.ReceiveRequestAlcoholData
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Headers
 
 
 interface ReportService {
-//    @GET()
-//    fun getGoal(
-//            @Body body: ReceiveRequestAlcoholData
-//    ): Call<GoalResponseData>
-//
-//    @GET()
-//    fun getRecordWeek(
-//            @Body body: ReceiveRequestAlcoholData
-//    ): Call<RecordWeekResponseData>
+    @Headers("Content-Type:application/json")
+    @GET("/goal")
+    fun getGoal(
+        @Header("jwt") token : String
+    ): Call<GoalResponseData>
+
 }
