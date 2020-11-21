@@ -6,13 +6,13 @@ import retrofit2.http.GET
 
 
 interface ReportService {
-    @GET()
-    fun getGoal(
-            @Body body: ReceiveRequestAlcoholData
-    ): Call<GoalResponseData>
-
-    @GET()
-    fun getRecordWeek(
-            @Body body: ReceiveRequestAlcoholData
-    ): Call<RecordWeekResponseData>
+//    @GET()
+//    fun getGoal(
+//            @Body body: ReceiveRequestAlcoholData
+//    ): Call<GoalResponseData>
+//
+//    @GET()
+//    fun getRecordWeek(
+//            @Body body: ReceiveRequestAlcoholData
+//    ): Call<RecordWeekResponseData>
 }
